@@ -1,0 +1,1 @@
+This is the stock market webpage to add your fav stocks and create your portfolio

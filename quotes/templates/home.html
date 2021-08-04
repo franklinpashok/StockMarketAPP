@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if ticker %}
+	{{ ticker}}
+{% endif %}
+
+{% if api %}
+	{% if api == "Error" %}
+		There was a issue with the stock symbol, Please try Again
+	{% else %}
+		<h1>{{api.companyName}}</h1>
+		<h3>Primary Market: {{api.primaryExchange}}</h3>
+		Price: ${{api.latestPrice}}<br/>
+		Volume: ${{api.volume}}<br/>
+		Previous Close: ${{api.previousClose}}<br/>
+		Market Cap: ${{api.marketCap}}<br/>
+		52 Week High: ${{api.week52High}}<br/>
+	{% endif %}
+{% endif %}
+
+{% endblock %}
