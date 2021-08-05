@@ -21,19 +21,23 @@ def home(request):
 			api = "Error"
 		return render(request, 'home.html', {'api': api})
 	else:
-		return render(request, 'home.html', {'ticker': "Enter a ticker symbol above"})
+		return render(request, 'home.html', {'ticker': "Enter a valid ticker symbol above"})
 ###################<HOME PAGE>####################
 
+###################<TEST PAGE>####################
+# Test page of your website its a function
+def test(request):
+	# install the requests
+	return render(request, 'test.html',{})
+###################<TEST PAGE>####################
 
-
-###################<ABOUT ME PAGE>####################
+###################<ABOUT ME PAGE>################
 # This is a function defined for about page
 def about(request):
 	return render(request, 'about.html',{})
-###################<ABOUT ME PAGE>####################
+###################<ABOUT ME PAGE>################
 
-
-###################<ADD STOCK PAGE>####################
+###################<ADD STOCK PAGE>###############
 # This is a function for Add_stock page
 def add_stock(request):
 	import requests
@@ -71,9 +75,9 @@ def delete(request, stock_id):
 	return redirect(delete_stock)
 #####################<DELETE STOCK PAGE>###############
 
-###################<DELETE STOCK PAGE>####################
+###################<DELETE STOCK PAGE>#################
 # This is a function for Add_stock page
 def delete_stock(request):
 	ticker = Stock.objects.all()
 	return render(request, 'delete_stock.html',{'ticker': ticker})
-###################<DELETE STOCK PAGE>####################
+###################<DELETE STOCK PAGE>#################
